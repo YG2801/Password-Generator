@@ -41,6 +41,11 @@ generateBtn.addEventListener("click", () => {
     const length = lengthSlider.value;
     space1.textContent = generatePassword(length);
     space2.textContent = generatePassword(length);
+    if(space1.textContent)
+    {
+        generateBtn.classList.add("disable");
+        generateBtn.disabled = true;
+    }
 })
 
 resetBtn.addEventListener("click", () => {
@@ -52,6 +57,8 @@ resetBtn.addEventListener("click", () => {
     symbolCheck.checked = false;
     space1.textContent = "";
     space2.textContent = "";
+    generateBtn.classList.remove("disable");
+    generateBtn.disabled = false;
 })
 
 lengthSlider.addEventListener("input", () => {

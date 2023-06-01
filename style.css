@@ -64,6 +64,10 @@ button {
     font-family: var(--secondary-font);
 }
 
+.disable{
+    opacity: 0.3;
+}
+
 button:hover {
     background-color:#199c70;
 }
