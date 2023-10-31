@@ -218,7 +218,7 @@ form {
         row-gap: 10px;
     }
     .empty-space {
-        width: 75%;
+        width: 90%;
     }
 }
 
@@ -228,5 +228,8 @@ form {
     }
     h4 {
         font-size: 0.9rem;
+    }
+    .container {
+        padding: 20px 20px 10px;
     }
 }
