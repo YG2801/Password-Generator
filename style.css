@@ -1,14 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Karla:wght@400;700;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Karla:wght@400;700;900&display=swap");
 
 :root {
-    --primary-font: 'Karla', sans-serif;
-    --secondary-font: 'Inter', sans-serif;
-    --off-white: #D5D4D8;
-    --blue-background: #1F2937;
+    --primary-font: "Karla", sans-serif;
+    --secondary-font: "Inter", sans-serif;
+    --off-white: #d5d4d8;
+    --blue-background: #1f2937;
     --box-color: #273549;
-    --green-background: #10B981;
-    --green-text: #4ADF86;
-    --password-color: #55F991;
+    --green-background: #10b981;
+    --green-text: #4adf86;
+    --password-color: #55f991;
 }
 
 * {
@@ -23,17 +23,38 @@ body {
     color: white;
     display: flex;
     font-size: 16px;
+    overflow: hidden;
 }
 
 .container {
-    margin:auto;
+    margin: auto;
     width: 550px;
-    height: 550px;
+    min-height: 550px;
     background-color: var(--blue-background);
     border-radius: 4px;
-    padding: 50px 50px 0;
+    padding: 50px 50px 20px;
     font-family: var(--primary-font);
     box-shadow: 0 0 10px white;
+    position: relative;
+}
+
+.copy-prompt {
+    position: absolute;
+    top: 10px;
+    right: 0;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    background-color: var(--green-background);
+    transform: translateX(100%);
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.show-copy-prompt {
+    opacity: 1;
+    transform: translateX(-10%);
 }
 
 h1 {
@@ -53,8 +74,14 @@ h4 {
     font-family: var(--secondary-font);
 }
 
-button {
+.btns {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
     margin-top: 30px;
+}
+
+button {
     width: 180px;
     height: 40px;
     border: none;
@@ -64,20 +91,16 @@ button {
     font-family: var(--secondary-font);
 }
 
-.disable{
+.disable {
     opacity: 0.3;
 }
 
 button:hover {
-    background-color:#199c70;
+    background-color: #199c70;
 }
 
 button:active {
     transform: scale(0.95);
-}
-
-.Reset-btn {
-    margin-left: 5px;
 }
 
 .line-break {
@@ -86,12 +109,13 @@ button:active {
 }
 
 .generation-area {
+    margin-top: 40px;
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    column-gap: 10px;
 }
 
 .empty-space {
-    margin-top: 40px;
     width: 50%;
     height: 40px;
     padding-top: 10px;
@@ -171,12 +195,38 @@ form {
 }
 
 .copy-icon {
-    position: relative;
-    top: 20px;
-    right: 28px;
-    width: 20px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: gray;
+    margin-left: -35px;
 }
 
 .copy-icon:active {
     transform: scale(0.96);
+}
+
+@media screen and (max-width: 576px) {
+    .container {
+        margin: 1.5em;
+    }
+}
+
+@media screen and (max-width: 518px) {
+    .generation-area {
+        margin-top: 20px;
+        flex-wrap: wrap;
+        row-gap: 10px;
+    }
+    .empty-space {
+        width: 75%;
+    }
+}
+
+@media screen and (max-width: 466px) {
+    h1 {
+        font-size: 2rem;
+    }
+    h4 {
+        font-size: 0.9rem;
+    }
 }
